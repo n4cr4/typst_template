@@ -1,3 +1,7 @@
+#import "@preview/codly:1.1.1": *
+#import "@preview/codly-languages:0.1.1": *
+#import "@preview/roremu:0.1.0": roremu
+
 #let font-san-serif = "Harano Aji Gothic"
 #let font-seif = ("Times Newer Roman", "Harano Aji Mincho")
 #let font-monospace = "HackGen Console NF"
@@ -9,6 +13,8 @@
   id: "Student id",
   doc,
 ) = {
+  show: codly-init.with()
+  codly(zebra-fill: none, stroke: 1pt + gray)
   set page(
     margin: (
       top: 1.5cm,

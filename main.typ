@@ -1,8 +1,4 @@
-#import "@preview/codly:1.1.1": *
-#import "@preview/codly-languages:0.1.1": *
-#show: codly-init
-#import "@preview/roremu:0.1.0": roremu
-#import "lib/abstract.typ": conf
+#import "lib/abstract.typ": *
 #show: conf.with(
   header: [卒業論文概要（hoge大学 fuga部 bar学科 ぬるぽ研究室）],
   title: [革新的アプローチ],
