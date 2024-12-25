@@ -1,7 +1,15 @@
-#import "lib/abstract.typ": *
+
+// #import "lib/abstract.typ": *
+// #show: conf.with(
+//   header: [卒業論文概要（hoge大学 fuga部 bar学科 ぬるぽ研究室）],
+//   title: [革新的アプローチ],
+//   author: [卒論noob],
+//   id: [0xdeadbeef],
+// )
+#import "lib/resume.typ": *
 #show: conf.with(
-  header: [卒業論文概要（hoge大学 fuga部 bar学科 ぬるぽ研究室）],
-  title: [革新的アプローチ],
+  title: [適当なゼミ 第n回],
+  sub_title: [革新的アプローチ],
   author: [卒論noob],
   id: [0xdeadbeef],
 )

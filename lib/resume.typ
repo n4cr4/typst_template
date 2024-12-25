@@ -7,8 +7,8 @@
 #let font-monospace = "HackGen Console NF"
 
 #let conf(
-  header: "Abstract header",
-  title: "Paper title",
+  title: "Main title",
+  sub_title: "Sub title",
   author: "Your name",
   id: "Student id",
   doc,
@@ -17,10 +17,10 @@
   codly(zebra-fill: none, stroke: 1pt + gray)
   set page(
     margin: (
-      top: 1.5cm,
-      bottom: 1cm,
-      left: 1.5cm,
-      right: 1.5cm,
+      top: 3.5cm,
+      bottom: 3.5cm,
+      left: 2.5cm,
+      right: 2.5cm,
     ),
     numbering: "1",
     columns: 2,
@@ -30,10 +30,9 @@
   show strong: set text(font: font-san-serif)
   show raw: set text(font: font-monospace)
 
-  set par(justify: true, first-line-indent: 1em, leading: 0.8em, spacing: 0.8em)
+  set par(justify: true, first-line-indent: 1em, leading: 1em, spacing: 1em)
   set heading(numbering: "1.1 ")
   show heading: it => {
-    v(1em, weak: true)
     set text(size: 13pt - 1.5pt * (it.depth), font: font-san-serif)
     it
     v(1em, weak: true)
@@ -65,22 +64,26 @@
     top + center,
     float: true,
     scope: "parent",
-    clearance: 2em,
+    clearance: 4em,
   )[
-    #header \
-    #v(12pt)
+    #v(4em)
     #{
-      set text(size: 14.4pt)
-      strong(title)
+      set text(size: 15pt)
+      title
     } \
-    #v(2pt)
     #{
-      set text(size: 14.4pt)
-      box(author)
+      set text(size: 9pt)
+      sub_title
     } \
+    #v(8pt)
     #{
       set text(size: 12pt)
-      id
+      box(id + author)
+    } \
+    #v(8pt)
+    #{
+      set text(size: 12pt)
+      datetime.today().display("[year]年[month]月[day]日")
     }
   ]
   doc
