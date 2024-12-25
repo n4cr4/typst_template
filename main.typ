@@ -6,10 +6,18 @@
 //   author: [卒論noob],
 //   id: [0xdeadbeef],
 // )
-#import "lib/resume.typ": *
+// #import "lib/resume.typ": *
+// #show: conf.with(
+//   title: [適当なゼミ 第n回],
+//   sub_title: [革新的アプローチ],
+//   author: [卒論noob],
+//   id: [0xdeadbeef],
+// )
+#import "lib/book.typ": *
 #show: conf.with(
-  title: [適当なゼミ 第n回],
-  sub_title: [革新的アプローチ],
+  header: [おそまつ 卒業論文],
+  title: [革新的アプローチ],
+  affiliation: [ぬるぽ研究室],
   author: [卒論noob],
   id: [0xdeadbeef],
 )
@@ -39,6 +47,7 @@ Latexにうんざりしたそこのあなた。Typstというモダンな組版�
 ちなみに、Typstのロゴは @typst-logo の通りです。
 
 = Typstのここがすごい！
+== とくにすごい
 + 高速なコンパイル
 + 可読性の高い記法
 + プレビュー機能
