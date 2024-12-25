@@ -2,6 +2,6 @@
     "tinymist.formatterMode": "typstyle",
     "editor.formatOnSave": true,
     "tinymist.fontPaths": [
-        "/mnt/c/Windows/Fonts"
+        "./fonts"
     ]
 }

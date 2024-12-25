@@ -1,3 +1,7 @@
+#let font-san-serif = "Harano Aji Gothic"
+#let font-seif = ("Times Newer Roman", "Harano Aji Mincho")
+#let font-monospace = "HackGen Console NF"
+
 #let conf(
   header: "Abstract header",
   title: "Paper title",
@@ -15,9 +19,12 @@
     numbering: "1",
     columns: 2,
   )
-  set text(lang: "ja", font: "MS Mincho", size: 10pt)
-  show strong: set text(font: "MS Gothic")
-  set par(justify: true, first-line-indent: 1em, leading: 0.7em, spacing: 0.8em)
+
+  set text(lang: "ja", font: font-seif, size: 10pt)
+  show strong: set text(font: font-san-serif)
+  show raw: set text(font: font-monospace)
+
+  set par(justify: true, first-line-indent: 1em, leading: 0.8em, spacing: 0.8em)
   set heading(numbering: "1.1 ")
   show heading: it => {
     v(1em, weak: true)
@@ -48,10 +55,6 @@
     it
   }
 
-  show raw: it => {
-    set text(font: ("Noto Sans", "MS Gothic"))
-    it
-  }
   place(
     top + center,
     float: true,
