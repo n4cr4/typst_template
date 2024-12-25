@@ -34,8 +34,8 @@
   set heading(numbering: "1.1 ")
   show heading: it => {
     v(1em, weak: true)
-    set text(size: 13pt - 1.3pt * (it.depth))
-    strong(it)
+    set text(size: 13pt - 1.3pt * (it.depth), font: font-san-serif)
+    it
     v(1em, weak: true)
     box()
     h(1em, weak: true)
