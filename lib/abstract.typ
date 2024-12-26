@@ -42,6 +42,7 @@
   }
 
   show figure.where(kind: table): set figure.caption(position: top)
+  show bibliography: set text(lang: "en")
   show bibliography: it => {
     show heading: it => {
       strong(it)

@@ -97,10 +97,7 @@ TypstはLatexと異なり、モードを持ちます。
 ) <typst-logo>
 
 = おわりに
-== 猫
-#roremu(4000)
-== ほんとうに終わる
-=== ほんとうにね
 いつまでLatexつかってんだよ！
+参考サイト @アカデミックヤク83:online をよく読みながら、まず序文を完成させる。
 
-#bibliography("ref.bib")
+#bibliography("ref.bib", title: [参考文献])

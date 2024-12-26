@@ -76,6 +76,7 @@
 
   show figure.where(kind: table): set figure.caption(position: top)
   set list(marker: [・])
+  show bibliography: set text(lang: "en")
 
   // cover
   {
