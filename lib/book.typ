@@ -34,6 +34,8 @@
   show raw: set text(font: font-monospace)
 
   set par(justify: true, first-line-indent: 1em, leading: 1em, spacing: 1em)
+
+  // heading
   set heading(numbering: "1.1")
   show heading.where(level: 1): it => {
     pagebreak()
@@ -71,6 +73,7 @@
 
   set list(marker: [・])
 
+  // cover
   {
     set align(center)
     set page(numbering: none)
@@ -87,5 +90,19 @@
   }
 
   counter(page).update(1)
+
+  // toc
+  show outline.entry.where(level: 1): it => {
+    v(12pt, weak: true)
+    show: strong
+    show regex("\d "): it => {
+      [第] + it + [章]
+      h(1em)
+    }
+    it.body
+    h(1fr)
+    it.page
+  }
+  outline(title: "目次", depth: 3, indent: 2em)
   doc
 }
