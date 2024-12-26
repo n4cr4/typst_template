@@ -91,7 +91,7 @@ TypstはLatexと異なり、モードを持ちます。
 / Markup: マークアップを記述するモード。`[ ]`で囲まれた部分はマークアップとして解釈されます。例えば`[*Hello*]`は*Hello*と表示されます。
 
 #figure(
-  placement: top,
+  placement: bottom,
   image("assets/logo.png", width: 40%),
   caption: "Typstのロゴ",
 ) <typst-logo>

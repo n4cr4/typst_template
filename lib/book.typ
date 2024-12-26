@@ -1,12 +1,11 @@
 #import "@preview/codly:1.1.1": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/roremu:0.1.0": roremu
+#import "@preview/hydra:0.5.1": hydra
 
 #let font-san-serif = "Harano Aji Gothic"
 #let font-seif = ("Times Newer Roman", "Harano Aji Mincho")
 #let font-monospace = "HackGen Console NF"
-
-// 目次、ページ番号
 
 #let conf(
   header: "Book header",
@@ -26,6 +25,13 @@
       right: 2.5cm,
     ),
     numbering: "1",
+    header: context {
+      hydra(1, skip-starting: true)
+      h(1fr)
+      [#counter(page).display()]
+      line(length: 100%)
+    },
+    footer: none,
     columns: 1,
   )
 
@@ -42,6 +48,8 @@
     set text(weight: "bold", size: 22pt)
     if it.numbering != none {
       [
+        // use block in order to have effect (`skip-starting`)
+        #block()
         #v(4em)
         第
         #numbering(it.numbering, ..counter(heading).at(it.location()))
@@ -64,19 +72,13 @@
   }
 
   show figure.where(kind: table): set figure.caption(position: top)
-  show bibliography: it => {
-    show heading: it => {
-      strong(it)
-    }
-    it
-  }
-
+  set bibliography(title: [#block()#v(4em) 参考文献])
   set list(marker: [・])
 
   // cover
   {
     set align(center)
-    set page(numbering: none)
+    set page(header: none)
     set text(size: 12pt)
     header
     v(1fr)
@@ -103,6 +105,6 @@
     h(1fr)
     it.page
   }
-  outline(title: "目次", depth: 3, indent: 2em)
+  outline(title: [#box()#v(4em) 目次], depth: 3, indent: 2em)
   doc
 }
