@@ -55,6 +55,9 @@
         #numbering(it.numbering, ..counter(heading).at(it.location()))
         章 \
       ]
+    } else {
+      block()
+      v(4em)
     }
     [
       #it.body \
@@ -72,7 +75,6 @@
   }
 
   show figure.where(kind: table): set figure.caption(position: top)
-  set bibliography(title: [#block()#v(4em) 参考文献])
   set list(marker: [・])
 
   // cover
@@ -105,6 +107,6 @@
     h(1fr)
     it.page
   }
-  outline(title: [#box()#v(4em) 目次], depth: 3, indent: 2em)
+  outline(title: [目次], depth: 3, indent: 2em)
   doc
 }
