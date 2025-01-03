@@ -91,7 +91,7 @@
     set text(size: 12pt)
     set align(right)
     [#affiliation \
-      #id + #author]
+      #id #author]
   }
 
   counter(page).update(1)
