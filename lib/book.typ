@@ -1,7 +1,6 @@
 #import "@preview/codly:1.1.1": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/roremu:0.1.0": roremu
-#import "@preview/hydra:0.5.1": hydra
 
 #let font-san-serif = "Harano Aji Gothic"
 #let font-seif = ("Times Newer Roman", "Harano Aji Mincho")
@@ -26,7 +25,23 @@
     ),
     numbering: "1",
     header: context {
-      hydra(1, skip-starting: true)
+      let selector = selector(heading.where(level: 1))
+      let chapters = query(selector)
+      let chapters_page = chapters.map(it => counter(page).at(it.location()).last())
+      if chapters.len() != 0 {
+        if counter(page).get().last() not in chapters_page {
+          let selector = heading.where(level: 1).before(here())
+          let chapter = query(selector).last()
+          let num = numbering(chapter.numbering, counter(heading).at(chapter.location()).first())
+          [
+            第
+            #num
+            章
+          ]
+          h(1em)
+          chapter.body
+        }
+      }
       h(1fr)
       [#counter(page).display()]
       line(length: 100%)
