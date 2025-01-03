@@ -100,11 +100,12 @@
   show outline.entry.where(level: 1): it => {
     v(12pt, weak: true)
     show: strong
-    show regex("\d "): it => {
-      [第] + it + [章]
+    if it.element.numbering != none {
+      let num = counter(heading).at(it.element.location()).first()
+      [第] + [#num] + [章]
       h(1em)
     }
-    it.body
+    it.element.body
     h(1fr)
     it.page
   }
